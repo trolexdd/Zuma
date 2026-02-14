@@ -8,8 +8,6 @@
 ![Platform](https://img.shields.io/badge/Platform-Windows%20|%20Linux%20|%20macOS-lightgrey?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)
 
-*A complete recreation of the classic Zuma puzzle game with procedural graphics and intelligent AI*
-
 [Features](#-features) • [Installation](#-installation) • [Controls](#-controls) • [Building](#-building-from-source) • [Contributing](#-contributing)
 
 ---
