@@ -2,154 +2,158 @@
 
 <div align="center">
 
-![Language](https://img.shields.io/badge/Language-C-blue?style=for-the-badge&logo=c)
+![Язык](https://img.shields.io/badge/Язык-C-blue?style=for-the-badge&logo=c)
 ![OpenGL](https://img.shields.io/badge/OpenGL-2.0-green?style=for-the-badge&logo=opengl)
 ![GLFW](https://img.shields.io/badge/GLFW-3.3-orange?style=for-the-badge)
-![Platform](https://img.shields.io/badge/Platform-Windows%20|%20Linux%20|%20macOS-lightgrey?style=for-the-badge)
-![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)
+![Платформа](https://img.shields.io/badge/Платформа-Windows%20|%20Linux%20|%20macOS-lightgrey?style=for-the-badge)
+![Лицензия](https://img.shields.io/badge/Лицензия-MIT-yellow?style=for-the-badge)
 
-[Features](#-features) • [Installation](#-installation) • [Controls](#-controls) • [Building](#-building-from-source) • [Contributing](#-contributing)
+*Полная реализация классической игры-головоломки Zuma с процедурной графикой и умным ИИ*
+
+[Возможности](#-возможности) • [Установка](#-установка) • [Управление](#-управление) • [Сборка](#️-сборка-из-исходников) • [Участие](#-как-помочь-проекту)
+
+[🇬🇧 English version](README_EN.md)
 
 ---
 
 </div>
 
-## 📖 About
+## 📖 О проекте
 
-**Zuma - EIS Edition** is a faithful recreation of the beloved PopCap puzzle game, built entirely from scratch in pure C with OpenGL. Every visual element is procedurally generated—from the animated frog to the glowing portal effects. The game features three difficulty levels, an intelligent AI bot that can play for you, and smooth 60 FPS gameplay.
+**Zuma - EIS Edition** — это точная реконструкция любимой головоломки от PopCap, полностью написанная с нуля на чистом C с использованием OpenGL. Каждый визуальный элемент генерируется процедурно — от анимированной лягушки до светящихся эффектов портала. Игра включает три уровня сложности, умного ИИ-бота, который может играть за вас, и плавный геймплей на 60 FPS.
 
-### ✨ What Makes This Special
+### ✨ Что делает игру особенной
 
-- 🎨 **100% Procedural Graphics** - No textures, all visuals rendered with OpenGL primitives
-- 🤖 **Smart AI Bot** - Watch the AI play or learn strategies (Press `B`)
-- 🐸 **Hand-Crafted Frog Character** - Detailed character design with expressive eyes
-- 💫 **Beautiful Particle Effects** - Satisfying visual feedback for every match
-- 📊 **Comprehensive Statistics** - Score tracking, combo system, and accuracy metrics
-- 🎯 **Three Difficulty Levels** - Each with unique path designs and speeds
-
----
-
-## 🎮 Features
-
-### Core Gameplay
-- **Classic Match-3 Mechanics** - Match 3+ balls of the same color to destroy them
-- **Combo System** - Chain reactions multiply your score
-- **Progressive Difficulty** - Three levels: Easy (Spiral), Medium (Wave), Hard (Figure-8)
-- **Smart Ball Spawning** - Balls appear gradually, not all at once
-- **Smooth Physics** - Ball collision and chain movement feel natural
-
-### Visual Features
-- ✨ Gradient-shaded balls with realistic highlights
-- 🌀 Animated portal with pulsating glow effects
-- 💥 Particle explosion system (200 simultaneous particles)
-- ⭐ Procedural starfield background
-- 🎨 Custom bitmap font rendering (5x7 pixel characters)
-- 🐸 Fully animated frog with eye tracking
-- 📏 Progress bar showing danger level
-
-### AI Bot System
-The bot uses intelligent target selection:
-- Analyzes the entire ball chain
-- Prioritizes creating 3+ matches (highest priority)
-- Considers both current and next ball colors
-- Accounts for ball distance to portal (danger zone)
-- Makes strategic decisions in real-time
-
-Press **B** to toggle the AI on/off and watch it play!
+- 🎨 **100% Процедурная графика** - Никаких текстур, всё отрисовано примитивами OpenGL
+- 🤖 **Умный ИИ-бот** - Наблюдайте за игрой ИИ и учитесь стратегиям (клавиша `B`)
+- 🐸 **Детализированная лягушка** - Продуманный дизайн персонажа с выразительными глазами
+- 💫 **Красивые эффекты частиц** - Приятная визуальная обратная связь на каждое действие
+- 📊 **Полная статистика** - Отслеживание очков, системы комбо и точности попаданий
+- 🎯 **Три уровня сложности** - Каждый с уникальным дизайном пути и скоростью
 
 ---
 
-## 🎯 Game Modes
+## 🎮 Возможности
 
-| Difficulty | Speed | Colors | Path Type | Balls |
-|------------|-------|--------|-----------|-------|
-| **🟢 Easy** | 1.0x (35 u/s) | 3 | Spiral | 12 |
-| **🟡 Medium** | 1.6x (55 u/s) | 4 | Wave | 18 |
-| **🔴 Hard** | 2.1x (75 u/s) | 5 | Figure-8 | 25 |
+### Основной геймплей
+- **Классическая механика "три в ряд"** - Соединяйте 3+ шара одного цвета для их уничтожения
+- **Система комбо** - Цепные реакции умножают ваши очки
+- **Прогрессивная сложность** - Три уровня: Лёгкий (Спираль), Средний (Волна), Сложный (Восьмёрка)
+- **Умный спавн шаров** - Шары появляются постепенно, а не все сразу
+- **Плавная физика** - Естественное столкновение шаров и движение цепочки
 
-### Scoring System
-- **Base Score**: 10 points per ball destroyed
-- **Combo Multiplier**: Each consecutive match increases multiplier
-- **Formula**: `Points = Balls × 10 × Combo`
+### Визуальные эффекты
+- ✨ Градиентные шары с реалистичными бликами
+- 🌀 Анимированный портал с пульсирующим свечением
+- 💥 Система частиц (200 одновременных частиц)
+- ⭐ Процедурный фон со звёздами
+- 🎨 Пользовательский растровый шрифт (символы 5x7 пикселей)
+- 🐸 Полностью анимированная лягушка со слежением глаз
+- 📏 Полоса прогресса, показывающая уровень опасности
 
-Example: Destroying 4 balls with a 3x combo = **120 points**!
+### Система ИИ-бота
+Бот использует интеллектуальный выбор целей:
+- Анализирует всю цепочку шаров
+- Приоритизирует создание совпадений 3+ шаров (наивысший приоритет)
+- Учитывает цвета текущего и следующего шара
+- Оценивает расстояние до портала (зона опасности)
+- Принимает стратегические решения в реальном времени
+
+Нажмите **B**, чтобы включить/выключить ИИ и посмотреть, как он играет!
 
 ---
 
-## 🎮 Controls
+## 🎯 Игровые режимы
 
-| Input | Action |
-|-------|--------|
-| **Mouse Movement** | Aim the frog's mouth |
-| **Left Click** | Shoot ball |
-| **B** | Toggle AI Bot ON/OFF |
-| **H** | Get strategic hint |
-| **P** | Pause/Resume game |
-| **ESC** | Return to menu |
+| Сложность | Скорость | Цвета | Тип пути | Шаров |
+|-----------|----------|-------|----------|-------|
+| **🟢 Лёгкий** | 1.0x (35 ед/с) | 3 | Спираль | 12 |
+| **🟡 Средний** | 1.6x (55 ед/с) | 4 | Волна | 18 |
+| **🔴 Сложный** | 2.1x (75 ед/с) | 5 | Восьмёрка | 25 |
+
+### Система подсчёта очков
+- **Базовые очки**: 10 очков за каждый уничтоженный шар
+- **Множитель комбо**: Каждое последовательное совпадение увеличивает множитель
+- **Формула**: `Очки = Шары × 10 × Комбо`
+
+Пример: Уничтожение 4 шаров с комбо x3 = **120 очков**!
 
 ---
 
-## 🚀 Installation
+## 🎮 Управление
+
+| Действие | Клавиша/Кнопка |
+|----------|----------------|
+| **Движение мыши** | Прицеливание |
+| **Левая кнопка мыши** | Выстрел шаром |
+| **B** | Вкл/Выкл ИИ-бот |
+| **H** | Получить подсказку |
+| **P** | Пауза/Продолжить |
+| **ESC** | Вернуться в меню |
+
+---
+
+## 🚀 Установка
 
 ### Windows
 
-#### Option 1: Pre-compiled Binary
-Download `zuma.exe` from [Releases](../../releases) and run it!
+#### Вариант 1: Готовый исполняемый файл
+Скачайте `zuma.exe` из раздела [Releases](../../releases) и запустите!
 
-#### Option 2: Compile from Source
+#### Вариант 2: Компиляция из исходников
 ```cmd
-# Using Visual Studio Developer Command Prompt
-cl main.c /I"C:\path\to\glfw\include" /link glfw3.lib opengl32.lib user32.lib gdi32.lib shell32.lib
+# Используя командную строку разработчика Visual Studio
+cl main.c /I"C:\путь\к\glfw\include" /link glfw3.lib opengl32.lib user32.lib gdi32.lib shell32.lib
 
-# Run
+# Запуск
 main.exe
 ```
 
 ### Linux
 
 ```bash
-# Install dependencies (Ubuntu/Debian)
+# Установка зависимостей (Ubuntu/Debian)
 sudo apt-get install build-essential libglfw3-dev libgl1-mesa-dev
 
-# Compile
+# Компиляция
 gcc main.c -lglfw -lGL -lm -o zuma
 
-# Run
+# Запуск
 ./zuma
 ```
 
 ### macOS
 
 ```bash
-# Install GLFW via Homebrew
+# Установка GLFW через Homebrew
 brew install glfw
 
-# Compile
+# Компиляция
 gcc main.c -lglfw -framework OpenGL -lm -o zuma
 
-# Run
+# Запуск
 ./zuma
 ```
 
 ---
 
-## 🛠️ Building from Source
+## 🛠️ Сборка из исходников
 
-### Prerequisites
-- C Compiler (GCC 4.9+, Clang 3.5+, or MSVC 2015+)
-- GLFW 3.3 or later
-- OpenGL 2.0+ support
+### Требования
+- Компилятор C (GCC 4.9+, Clang 3.5+ или MSVC 2015+)
+- GLFW 3.3 или новее
+- Поддержка OpenGL 2.0+
 
-### Quick Build
+### Быстрая сборка
 
-**Using Make:**
+**Используя Make:**
 ```bash
-make          # Build the game
-make run      # Build and run
-make clean    # Remove build files
+make          # Собрать игру
+make run      # Собрать и запустить
+make clean    # Удалить файлы сборки
 ```
 
-**Using CMake:**
+**Используя CMake:**
 ```bash
 mkdir build && cd build
 cmake ..
@@ -157,7 +161,7 @@ cmake --build .
 ./zuma
 ```
 
-**Manual Compilation:**
+**Ручная компиляция:**
 ```bash
 # Linux/macOS
 gcc main.c -lglfw -lGL -lm -o zuma
@@ -168,126 +172,139 @@ gcc main.c -lglfw3 -lopengl32 -lgdi32 -o zuma.exe
 
 ---
 
-## 📊 Technical Highlights
+## 📊 Технические особенности
 
-### Architecture
+### Архитектура
 ```
 ┌─────────────────────────────────────┐
-│       Game State Machine            │
+│      Конечный автомат игры          │
 ├─────────────────────────────────────┤
-│  MENU → LEVEL_SELECT → PLAYING     │
+│  МЕНЮ → ВЫБОР_УРОВНЯ → ИГРА        │
 │    ↑         ↓            ↓         │
-│    └─── WON/LOST ────────┘          │
+│    └─── ПОБЕДА/ПОРАЖЕНИЕ ┘          │
 └─────────────────────────────────────┘
 ```
 
-### Code Statistics
-- **Lines of Code**: ~1,850
-- **Functions**: 50+
-- **Rendering System**: Immediate Mode OpenGL
-- **Memory Usage**: < 10 MB
-- **Target FPS**: 60
+### Статистика кода
+- **Строк кода**: ~1 850
+- **Функций**: 50+
+- **Система рендеринга**: Immediate Mode OpenGL
+- **Использование памяти**: < 10 МБ
+- **Целевой FPS**: 60
 
-### Path Generation
-Three mathematically-generated paths:
-1. **Spiral** - Archimedean spiral from edge to center
-2. **Wave** - Sinusoidal oscillations along a spiral
-3. **Figure-8** - Complex Lissajous curve pattern
+### Генерация путей
+Три математически сгенерированных пути:
+1. **Спираль** - Архимедова спираль от края к центру
+2. **Волна** - Синусоидальные колебания вдоль спирали
+3. **Восьмёрка** - Сложная кривая Лиссажу
 
-### AI Algorithm
+### Алгоритм ИИ
 ```python
-Priority Calculation:
-├─ Current ball + 2+ matches  → Priority: 100+
-├─ Current ball + 1 match     → Priority: 50+
-├─ Next ball + 2+ matches     → Priority: 80+
-└─ Distance bonus             → +distance/10
+Расчёт приоритета:
+├─ Текущий шар + 2+ совпадения  → Приоритет: 100+
+├─ Текущий шар + 1 совпадение   → Приоритет: 50+
+├─ Следующий шар + 2+ совпадения → Приоритет: 80+
+└─ Бонус за расстояние          → +расстояние/10
 ```
 
 ---
 
-## 🐛 Known Issues & Limitations
+## 🐛 Известные проблемы и ограничения
 
-- **No Sound**: OpenGL doesn't handle audio (consider adding OpenAL in the future)
-- **AI Limitations**: Bot can't predict chain reactions (intentional for difficulty)
-- **Visual Glitches**: Balls may briefly overlap during rapid spawning (cosmetic only)
-
----
-
-## 🗺️ Roadmap
-
-### Planned Features
-- [ ] 🔊 Sound effects and background music (OpenAL integration)
-- [ ] 💾 High score persistence (save to file)
-- [ ] 🎁 Power-ups system (bombs, slow-motion, reverse)
-- [ ] 🌈 More color schemes and themes
-- [ ] 📱 Touch controls for mobile platforms
-- [ ] 🏆 Achievement system
-- [ ] 🎨 Modern OpenGL renderer (shaders)
-- [ ] 🌍 More level designs
+- **Нет звука**: OpenGL не работает со звуком (можно добавить OpenAL в будущем)
+- **Ограничения ИИ**: Бот не может предсказывать цепные реакции (намеренно для сложности)
+- **Визуальные глюки**: Шары могут кратковременно накладываться при быстром спавне (только визуально)
 
 ---
 
-## 🤝 Contributing
+## 🗺️ Планы развития
 
-Contributions are welcome! Here's how you can help:
-
-1. **Fork** the repository
-2. **Create** a feature branch (`git checkout -b feature/AmazingFeature`)
-3. **Commit** your changes (`git commit -m 'Add some AmazingFeature'`)
-4. **Push** to the branch (`git push origin feature/AmazingFeature`)
-5. **Open** a Pull Request
-
-### Contribution Ideas
-- 🎵 Add sound effects using OpenAL
-- 🎨 Create alternative themes
-- 🤖 Improve AI algorithm
-- 📚 Write better documentation
-- 🐛 Fix bugs and issues
-- ✨ Add new visual effects
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
+### Запланированные функции
+- [ ] 🔊 Звуковые эффекты и фоновая музыка (интеграция OpenAL)
+- [ ] 💾 Сохранение рекордов (запись в файл)
+- [ ] 🎁 Система бонусов (бомбы, замедление, реверс)
+- [ ] 🌈 Больше цветовых схем и тем
+- [ ] 📱 Сенсорное управление для мобильных платформ
+- [ ] 🏆 Система достижений
+- [ ] 🎨 Современный рендерер OpenGL (шейдеры)
+- [ ] 🌍 Больше дизайнов уровней
 
 ---
 
-## 📜 License
+## 🤝 Как помочь проекту
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Мы приветствуем вклад в проект! Вот как вы можете помочь:
 
----
+1. **Сделайте Fork** репозитория
+2. **Создайте** ветку с новой функцией (`git checkout -b feature/КрутаяФункция`)
+3. **Закоммитьте** изменения (`git commit -m 'Добавлена крутая функция'`)
+4. **Отправьте** в ветку (`git push origin feature/КрутаяФункция`)
+5. **Откройте** Pull Request
 
-## 🙏 Acknowledgments
+### Идеи для вклада
+- 🎵 Добавить звуковые эффекты используя OpenAL
+- 🎨 Создать альтернативные темы оформления
+- 🤖 Улучшить алгоритм ИИ
+- 📚 Написать лучшую документацию
+- 🐛 Исправить баги и проблемы
+- ✨ Добавить новые визуальные эффекты
 
-- **Original Game**: Zuma by PopCap Games (2003)
-- **Libraries**: GLFW for windowing, OpenGL for graphics
-- **Inspiration**: Classic puzzle games and procedural art
-
----
-
-## 💡 Tips & Tricks
-
-- **Create Combos**: Try to set up chain reactions for massive points
-- **Use the Hint**: Press `H` when stuck for strategic advice
-- **Watch the Bot**: Enable AI mode (`B`) to learn advanced strategies
-- **Plan Ahead**: Always check the "NEXT" ball indicator
-- **Danger Zone**: The progress bar turns red when balls are near the portal
-- **Accuracy Matters**: Your accuracy percentage is shown after each game
+См. [CONTRIBUTING.md](CONTRIBUTING.md) для подробных рекомендаций.
 
 ---
 
-## 📞 Contact & Support
+## 📜 Лицензия
 
-- **Issues**: [Report bugs or request features](../../issues)
-- **Discussions**: [Join the community discussions](../../discussions)
-- **Pull Requests**: [Contribute code improvements](../../pulls)
+Этот проект распространяется под лицензией MIT - см. файл [LICENSE](LICENSE) для деталей.
+
+---
+
+## 🙏 Благодарности
+
+- **Оригинальная игра**: Zuma от PopCap Games (2003)
+- **Библиотеки**: GLFW для работы с окнами, OpenGL для графики
+- **Вдохновение**: Классические головоломки и процедурное искусство
+
+---
+
+## 💡 Советы и хитрости
+
+- **Создавайте комбо**: Старайтесь настраивать цепные реакции для огромных очков
+- **Используйте подсказку**: Нажмите `H`, если застряли, для получения стратегического совета
+- **Наблюдайте за ботом**: Включите режим ИИ (`B`), чтобы изучить продвинутые стратегии
+- **Планируйте заранее**: Всегда проверяйте индикатор "СЛЕДУЮЩИЙ" шар
+- **Зона опасности**: Полоса прогресса становится красной, когда шары близко к порталу
+- **Точность важна**: Ваш процент точности показывается после каждой игры
+
+---
+
+## 📞 Контакты и поддержка
+
+- **Проблемы**: [Сообщить о баге или предложить функцию](../../issues)
+- **Обсуждения**: [Присоединиться к обсуждениям сообщества](../../discussions)
+- **Pull Requests**: [Внести улучшения в код](../../pulls)
+
+---
+
+## 🎓 Использование в образовательных целях
+
+Этот проект отлично подходит для:
+- 📚 Изучения программирования на C
+- 🎮 Понимания разработки игр
+- 🎨 Изучения OpenGL и компьютерной графики
+- 🤖 Реализации алгоритмов ИИ
+- 💻 Практики работы с Git и GitHub
+
+Не стесняйтесь использовать код для обучения!
 
 ---
 
 <div align="center">
 
-### ⭐ Star this repository if you enjoyed the game! ⭐
+### ⭐ Поставьте звезду репозиторию, если вам понравилась игра! ⭐
 
-Made with ❤️ using C and OpenGL
+Сделано с ❤️ на C и OpenGL
 
-**[⬆ Back to Top](#-zuma---eis-edition)**
+**[⬆ Наверх](#-zuma---eis-edition)**
 
 </div>
